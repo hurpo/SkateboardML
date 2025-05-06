@@ -1,6 +1,10 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3986905.svg)](https://doi.org/10.5281/zenodo.3986905)
 
-# Machine Learning Skateboarding Tricks
+# Extending Upon SkateboardML
+
+This is a fork of the project https://github.com/LightningDrop/SkateboardML. For my final project in ECEN 4493 Artifical Intelligence in Engineering I am extending upon this project by adding more tricks and repurposing SkateboardML for judging games of SKATE.
+
+Below was apart of the original projects README, with slight changes:
 
 Skateboarders can easily recognize tricks performed by other skateboarders.
 Our goal in this project is to teach the computer to recognize skateboarding tricks.
@@ -46,54 +50,6 @@ We chose between Ollie and Kickflip.
  
 So that algorithm would take an input like above and spit out a probability of how sure it is that it is a ollie or a kickflip.
 
-
-
-16 June TODO:
-
-- ~Gather video training data of tricks by searching for Creative Commons license in YouTube.~
-    We'll also need to maintain the links to all videos so we can properly credit them.
-- ~Edit videos into 1 to 2 second clips of just the trick.~
-    ~Our goal is to have 100 clips of each trick.~
-    ~We should start by picking just two tricks- ollie and kickflip?~
-- (Maybe) start processing videos into homogeneous form: 30 frames / second at a specific length and resolution.
-- ~Start reading up on background for video machine learning- is 100 clips of training data enough?~
-
-23 JUNE TODO:
-- (Maybe) start processing videos into homogeneous form: 30 frames / second at a specific length and resolution.
-- ~Finish gathering video training data~
-- ~Email Justin~
-- ~Reading about background for video machine learning~
-
-30 JUNE TODO:
-- ~Summarize UCF101 approach~
-- ~Try to run UCF101 code~
-- FUN: make a project introduction video
-
-7 July:
-- ~Adapt UCF101 code to our data, and train LSTM~
-
-15 July:
-
-- ~Written summary describing exactly what our code does and what our results are. Google "Literate programming"~
-- ~Run some individual videos through the trained model and interpret the results. For example, P(kickflip) = 0.8~
-- ~Check if running fewer training epochs will improve validation accuracy.~
-- Construct CNN and compare performance to LSTM. (this will take longer)
-
-21 July:
-- ~Randomize test train split and check accuracy~
-- ~Think about how you want to present this work~
-- Find out why some of the videos are misclassified
-
-28 July:
-- ~Write high level goals and do a 30 second video~
-- Package and release this dataset on an open repository (Clark)
-- ~Try using kickflip down stairs to see if the trick classifies~
-
-4 August:
-- ~Rewrite add more trick classifier~
-- ~Push notes of video credit~
-- Improved video!
-- 180 or variation trick through classifier
 
 ## General approach
 
