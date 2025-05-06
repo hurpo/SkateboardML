@@ -13,7 +13,7 @@ import numpy as np
 import tqdm
 from sklearn.preprocessing import LabelBinarizer
 
-BASE_PATH = 'D:/SkateboardML/Tricks'
+BASE_PATH = '/home/skylar/Documents/SkateboardML/Tricks'
 VIDEOS_PATH = os.path.join(BASE_PATH, '**','*.mov')
 SEQUENCE_LENGTH = 40
 
@@ -71,13 +71,14 @@ for img, batch_paths in tqdm.tqdm(dataset):
     for features, path in zip(batch_features.numpy(), batch_paths.numpy()):
         if path != current_path and current_path is not None:
             output_path = current_path.decode().replace('.mov', '.npy')
+            print("Output path: " + str(output_path))
             np.save(output_path, all_features)
             all_features = []
             
         current_path = path
         all_features.append(features)
         
-LABELS = ['Ollie','Kickflip','Shuvit'] 
+LABELS = ["Back180", "Front180", "Frontshuvit", "Kickflip", "Ollie", "Shuvit", "Varial"]
 encoder = LabelBinarizer()
 encoder.fit(LABELS)
 
@@ -93,10 +94,10 @@ model.compile(loss='categorical_crossentropy',
               optimizer='Adam',
               metrics=['accuracy', 'top_k_categorical_accuracy'])
 
-with open('testlist02.txt') as f:
+with open('testlist03.txt') as f:
     test_list = [row.strip() for row in list(f)]
 
-with open('trainlist02.txt') as f:
+with open('trainlist03.txt') as f:
     train_list = [row.strip() for row in list(f)]
     train_list = [row.split(' ')[0] for row in train_list]
 
